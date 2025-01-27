@@ -1,16 +1,13 @@
-# Marketplace de Serviços Locais
+# Marketplace
 
 ## Descrição do Projeto
 
-<p> O Marketplace de Serviços Locais é uma plataforma desenvolvida para conectar prestadores de serviços com clientes que buscam serviços em sua região. O projeto visa facilitar a comunicação entre prestadores e clientes, simplificando o processo de busca, agendamento e pagamento de serviços diversos, como encanamento, manutenção elétrica, reformas, entre outros. </p>
+<p> O Marketplace é uma plataforma desenvolvida para conectar prestadores de serviços com clientes que buscam produtos. O projeto visa facilitar a comunicação entre prestadores e clientes, simplificando o processo de busca por produtos diversos. </p>
 
  ## Funcionalidades Principais
 
-- <b>Cadastro de Usuários:</b> Permite o registro de clientes e prestadores de serviços com informações básicas, como nome, e-mail, endereço e tipo de serviço oferecido.
-- <b>Busca e Filtro de Serviços:</b> Os clientes podem buscar serviços por categoria, localização ou avaliação dos prestadores.
-- <b>Agendamento de Serviços:</b> Interface para marcar serviços com base na disponibilidade do prestador.
-- <b>Sistema de Avaliação:</b> Clientes podem avaliar prestadores de serviços, ajudando outros usuários na escolha.
-- <b>Pagamento Online (possivel implementação):</b> Integração com APIs de pagamento para facilitar transações seguras.
+- <b>Cadastro de Usuários:</b> Permite o registro de clientes e prestadores de serviços com informações básicas, como nome, e-mail, endereço e tipo de produto oferecido.
+- <b>Busca e Filtro de produtos:</b> Os clientes podem buscar produtos por categoria, localização ou avaliação dos prestadores.
 
 ## Arquitetura do Projeto
 O projeto utiliza o padrão de arquitetura <b>MVC (Model-View-Controller)</b> para organizar e estruturar o código de forma clara e eficiente.
@@ -29,9 +26,7 @@ O projeto utiliza o padrão de arquitetura <b>MVC (Model-View-Controller)</b> pa
 ### Front-end
 
 - <b>HTML5, CSS3, JavaScript</b>
-- <b>Bootstrap:</b> Framework CSS para o design responsivo.
-- <b>Thymeleaf:</b> Motor de template para renderizar as páginas no servidor.
-
+  
 ### Padrões de Projeto
 - <b>MVC (Model-View-Controller):</b> Facilita a separação de preocupações e organização do projeto.
 - <b>Singleton:</b> Utilizado para gerenciar instâncias únicas de componentes críticos (Ex: Configurações de banco de dados).
