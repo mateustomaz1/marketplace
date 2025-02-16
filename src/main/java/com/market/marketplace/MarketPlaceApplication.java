@@ -31,9 +31,9 @@ public class MarketPlaceApplication implements CommandLineRunner {
 
         if (adminAccount.isEmpty()) {
             AppUser user1 = new AppUser();
-            user1.setUsername("Gustas");
-            user1.setEmail("gustas8520@gmail.com");
-            user1.setPassword(new BCryptPasswordEncoder().encode("gustas123"));
+            user1.setUsername("admin");
+            user1.setEmail("admin@gmail.com");
+            user1.setPassword(new BCryptPasswordEncoder().encode("123456"));
             user1.setTotalProducts(0);
             user1.setTotalSold(0);
             user1.setRole(Role.USER);
@@ -42,9 +42,9 @@ public class MarketPlaceApplication implements CommandLineRunner {
             refreshTokenRepository.save(newRefreshToken1);
 
             AppUser user2 = new AppUser();
-            user2.setUsername("Antanas");
-            user2.setEmail("antanas8520@gmail.com");
-            user2.setPassword(new BCryptPasswordEncoder().encode("antanas123"));
+            user2.setUsername("user");
+            user2.setEmail("user@gmail.com");
+            user2.setPassword(new BCryptPasswordEncoder().encode("123456"));
             user2.setTotalProducts(0);
             user2.setTotalSold(0);
             user2.setRole(Role.USER);
