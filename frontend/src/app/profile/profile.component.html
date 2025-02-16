@@ -1,0 +1,148 @@
+<div class="flex flex-col items-center justify-between p-5 md:flex-row">
+  <h1 (click)="redirect('/home')" class="text-6xl text-gray-900 font-semibold cursor-pointer">MarketPlace</h1>
+  <form class="w-full relative pl-2 pr-2">
+    <div class="relative">
+      <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+        <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+      <form (submit)="search()">
+        <input [(ngModel)]="searchvalue" type="search" name="searchvalue" id="default-search" class="block p-4 pl-10 w-full md:w-full lg:w-full xl:w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded focus:outline-none md:mr-2 lg:mr-4 xl:mr-6" required="">
+        <button type="submit" class="text-white absolute top-1/2 transform -translate-y-1/2 right-2.5 bg-blue-500 hover:bg-blue-700 font-bold text-bold px-4 py-2 rounded">Procurar</button>
+      </form>
+      <button type="submit" class="text-white absolute top-1/2 transform -translate-y-1/2 right-2.5 bg-blue-500 hover:bg-blue-700 font-bold text-bold px-4 py-2 rounded">Procurar</button>
+    </div>
+  </form>
+  <div class="flex mt-4 md:mt-0 space-x-2">
+    <button (click)="redirect('home')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Home
+    </button>
+    <button (click)="logout()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Sair
+    </button>
+  </div>
+</div>
+
+<div class="border border-gray-300 rounded flex flex-col items-center justify-center bg-gray-50 mx-8">
+  @if (this.username) {
+    <div class="text-4xl text-gray-900 font-semibold mt-2">{{this.username}}</div>
+  } @else {
+    <div class="text-4xl text-gray-900 font-semibold">Faça Login</div>
+  }
+  <div class="flex flex-wrap justify-center items-center space-x-2 mt-4">
+    <div class="flex flex-row items-center justify-center" id="totalProducts">
+      <div class="flex flex-col items-center pr-4">
+        <div class="text-2xl text-gray-900 font-semibold">Total de produtos</div>
+        <div class="text-4xl text-gray-900 font-semibold mb-2">{{this.totalProducts}}</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="text-2xl text-gray-900 font-semibold">Produtos vendidos</div>
+        <div class="text-4xl text-gray-900 font-semibold mb-2">{{this.totalSold}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="flex justify-between items-center bg-gray-50 border-gray-300">
+  <div class="text-5xl text-gray-900 font-semibold ml-8 mt-3">Suas listagens</div>
+  @if (this.show){
+    <button (click)="modal()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-8 mt-3">
+      Criar nova lista
+    </button>
+  }
+</div>
+
+<div class="box-border border rounded border-gray-300 bg-gray-50 mx-10 mt-3">
+  @if (listings.length > 0) {
+    <div class="flex flex-wrap justify-center">
+      @for (listing of listings; track listings) {
+        <div class="mx-3 my-3 border rounded p-1 bg-gray-50">
+          <img (click)="redirect('/listing/' + listing.id)" class="object-cover w-48 h-32 rounded cursor-pointer" src="data:image/jpg;base64,{{ listing.image }}" alt="">
+          <div class="text-gray-900 font-semibold text-lg">{{ listing.title }}</div>
+          <div class="text-gray-900 font-semibold text-lg">Preço: {{ listing.price }} R$</div>
+          <div class="text-gray-900 font-semibold text-lg">ID: {{ listing.id }}</div>
+          <div style="display: flex; justify-content: center;">
+            @if (this.show){
+              <button (click)="delete(listing.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2 flex-grow mr-1">Deletar</button>
+              <button (click)="sold(listing.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 flex-grow">Vendido</button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
+
+@if(modalShow) {
+  <div class="fixed inset-0 flex items-center justify-center z-50">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative p-4 w-full max-w-md max-h-full z-50">
+      <div class="content-center">
+        <div class="relative bg-white rounded drop-shadow-[0_0px_10px_rgba(0,0,0,0.15)]">
+          <div class="flex items-center justify-between p-4 md:pr-5 md:pl-5 md:pt-5 md:pb-0 rounded">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Criar novo produto
+            </h3>
+            <button (click)="modal()" type="button" class="focus:outline-nonetext-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded text-sm w-8 h-8 ms-auto inline-flex justify-center items-center">
+              <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+              <span class="sr-only">Fechar modal</span>
+            </button>
+          </div>
+          <form [formGroup]="ListingForm" (ngSubmit)="listing()" class="p-4 md:p-5">
+            <div class="grid gap-4 mb-4 grid-cols-2">
+              <div class="col-span-2">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Titulo</label>
+                <input formControlName="title" type="text" name="name" id="name" class="focus:outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded block w-full p-2.5" placeholder="Iphone 15">
+                @if (ListingForm.controls["title"].touched && ListingForm.controls["title"].invalid) {
+                  <div class="text-red-500 text-xs">O título deve ter menos de 10 caracteres</div>
+                }
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Preço</label>
+                <input formControlName="price" type="number" name="price" id="price" class="focus:outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded block w-full p-2.5" placeholder="R$1" min="1">
+                @if (ListingForm.controls["price"].touched && ListingForm.controls["price"].invalid) {
+                  <div class="text-red-500 text-xs">Somente números são permitidos</div>
+                }
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Categoria</label>
+                <select formControlName="category" id="category" class="focus:outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded block w-full p-2.5">
+                  <option value="TV">TV/Monitores</option>
+                  <option value="PC">PC</option>
+                  <option value="GA">Jogos/Console</option>
+                  <option value="PH">Celulares</option>
+                  <option value="CAR">Carros</option>
+                </select>
+              </div>
+              <div class="col-span-2">
+                <label for="number" class="block mb-2 text-sm font-medium text-gray-900">Numero celular</label>
+                <input formControlName="number" type="text" name="number" id="number" class="focus:outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded block w-full p-2.5" placeholder="+558399999999">
+                @if (ListingForm.controls["number"].touched && ListingForm.controls["number"].invalid) {
+                  <div class="text-red-500 text-xs">O número de telefone deve ser válido</div>
+                }
+              </div>
+              <div class="col-span-2">
+                <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Descrição do produto</label>
+                <textarea formControlName="description" id="description" rows="4" class="min-h-32 max-h-64 focus:outline-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300" placeholder="Escreva uma descrição para o produto"></textarea>
+                @if (ListingForm.controls["description"].touched && ListingForm.controls["description"].invalid) {
+                  <div class="text-red-500 text-xs">A descrição deve ter menos de 100 caracteres</div>
+                }
+              </div>
+              <div class="col-span-2">
+                <label for="image" class="block mb-2 text-sm font-medium text-gray-900">Imagem do produto</label>
+                <input (change)="file($event)" formControlName="image" type="file" id="image" class="focus:outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded block w-full p-2.5" accept="image/*" required>
+              </div>
+            </div>
+            <button [disabled]="!ListingForm.valid" [class.disabled]="ListingForm.invalid" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Adicionar novo produto
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+}
