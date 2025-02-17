@@ -78,11 +78,25 @@ marketplace/
    ```
 3. Acesse `http://localhost:4200/`
 
-## Documentação da API
-A documentação da API pode ser acessada através do **Swagger**:
-```
-http://localhost:8080/swagger-ui.html
-```
+
+# Diagramas 
+
+### Diagrama de classe
+
+<img alt="sistema" src="./frontend/src/assets/diagrama-classes.png" width="100%">
+
+### Diagrama de atividades
+<img alt="sistema" src="./frontend/src/assets/diagram-activity.png" width="100%">
+
+### Diagrama de caso de uso
+<img alt="sistema" src="./frontend/src/assets/caso-uso.png" width="100%">
+
+### Diagrama de sequência
+<img alt="sistema" src="./frontend/src/assets/diagrama-sequencia.png" width="100%">
+
+### Diagrama de estado
+<img alt="sistema" src="./frontend/src/assets/diagrama-estados.png" width="100%">
+
 
 ## Licença
 Este projeto está licenciado sob a **MIT License**.
