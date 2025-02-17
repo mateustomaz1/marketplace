@@ -15,7 +15,7 @@ import java.util.Optional;
 public interface RefreshTokenRepository extends JpaRepository<RefreshToken, Integer> {
     Optional<RefreshToken> findByToken(String token);
     Optional<RefreshToken> findTokenByUser(AppUser user);
-    // Dumb query, but it works
+
     @Modifying
     @Transactional
     @Query("UPDATE RefreshToken u SET u.token = :token, u.expiration = :expiration WHERE u.id = :userId")

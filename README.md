@@ -79,7 +79,6 @@ marketplace/
 3. Acesse `http://localhost:4200/`
 
 
-
 # Diagramas 
 
 ### Diagrama de classe
