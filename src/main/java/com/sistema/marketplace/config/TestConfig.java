@@ -22,7 +22,7 @@ import com.sistema.marketplace.repositories.ProductRepository;
 import com.sistema.marketplace.repositories.UserRepository;
 
 @Configuration
-@Profile("test")
+@Profile("dev")
 public class TestConfig implements CommandLineRunner {
 
 	@Autowired
