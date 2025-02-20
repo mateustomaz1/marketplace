@@ -22,18 +22,25 @@ Este projeto consiste em um Marketplace de Serviços, onde prestadores de servi�
 - Painel administrativo para gerenciamento
 
 ---
-## UML do Projeto
-Abaixo está a representação do diagrama UML do sistema:
 
-**Diagrama de Classes**
-```
-[Usuario] <>-- [Cliente]
-[Usuario] <>-- [Prestador]
-[Prestador] <>-- [Servico]
-[Cliente] <>-- [SolicitacaoServico] -- [Servico]
-[Pagamento] -- [SolicitacaoServico]
-```
-*(Diagrama mais detalhado deve ser gerado e anexado ao projeto)*
+
+## UML do Projeto
+Abaixo estão os diagramas UML do sistema:
+
+### Diagrama de Classes
+![Diagrama de Classes](imagens/diagrama-classes.png)
+
+### Diagrama de Caso de Uso
+![Diagrama de Caso de Uso](imagens/diagrama-caso-uso.png)
+
+### Diagrama de Sequência
+![Diagrama de Sequência](imagens/diagrama-sequencia.png)
+
+### Diagrama de Estado
+![Diagrama de Estado](imagens/diagrama-estado.png)
+
+### Diagrama de Atividades
+![Diagrama de Atividades](imagens/diagrama-atividades.png)
 
 ---
 ## Cronograma do Projeto
