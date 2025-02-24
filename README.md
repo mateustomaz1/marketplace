@@ -28,19 +28,19 @@ Este projeto consiste em um Marketplace de Serviços, onde prestadores de servi�
 Abaixo estão os diagramas UML do sistema:
 
 ### Diagrama de Classes
-![Diagrama de Classes](imagens/diagrama-classes.png)
+![Diagrama de Classes]()
 
 ### Diagrama de Caso de Uso
-![Diagrama de Caso de Uso](imagens/diagrama-caso-uso.png)
+![Diagrama de Caso de Uso]()
 
 ### Diagrama de Sequência
-![Diagrama de Sequência](imagens/diagrama-sequencia.png)
+![Diagrama de Sequência]()
 
 ### Diagrama de Estado
-![Diagrama de Estado](imagens/diagrama-estado.png)
+![Diagrama de Estado]()
 
 ### Diagrama de Atividades
-![Diagrama de Atividades](imagens/diagrama-atividades.png)
+![Diagrama de Atividades]()
 
 ---
 ## Cronograma do Projeto
