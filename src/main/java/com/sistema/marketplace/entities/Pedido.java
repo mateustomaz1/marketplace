@@ -17,7 +17,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "tb_pedido")
 public class Pedido implements Serializable {
@@ -51,50 +53,10 @@ public class Pedido implements Serializable {
 		setStatusPedido(statusPedido);
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Instant getMomento() {
-		return momento;
-	}
-
-	public void setMomento(Instant momento) {
-		this.momento = momento;
-	}
-
-	public Usuario getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Usuario cliente) {
-		this.cliente = cliente;
-	}
-
-	public StatusPedido getStatusPedido() {
-		return StatusPedido.valueOf(statusPedido);
-	}
-
 	public void setStatusPedido(StatusPedido statusPedido) {
 		if (statusPedido != null) {
 			this.statusPedido = statusPedido.getCodigo();
 		}
-	}
-
-	public Pagamento getPagamento() {
-		return pagamento;
-	}
-
-	public void setPagamento(Pagamento pagamento) {
-		this.pagamento = pagamento;
-	}
-
-	public Set<ItemPedido> getItens() {
-		return itens;
 	}
 
 	public Double getTotal() {

@@ -2,9 +2,6 @@ package com.sistema.marketplace.entities.pk;
 
 import java.io.Serializable;
 
-import com.sistema.marketplace.entities.Order;
-import com.sistema.marketplace.entities.Product;
-
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
