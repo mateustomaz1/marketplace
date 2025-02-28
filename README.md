@@ -1,4 +1,4 @@
-# Marketplace Project
+# E-commerce
 
 ## Descrição do Projeto
 Este projeto consiste em uma API de Marketplace, onde é possivel:
