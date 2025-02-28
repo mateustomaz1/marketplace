@@ -1,5 +1,6 @@
 package com.sistema.marketplace.entities;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import com.sistema.marketplace.entities.pk.ItemPedidoPK;
@@ -8,14 +9,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "tb_item_pedido")
 public class ItemPedido implements Serializable {
+
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private ItemPedidoPK id = new ItemPedidoPK();
+	private final ItemPedidoPK id = new ItemPedidoPK();
 
 	private Integer quantidade;
 	private Double preco;
@@ -34,34 +39,6 @@ public class ItemPedido implements Serializable {
 	@JsonIgnore
 	public Pedido getPedido() {
 		return id.getPedido();
-	}
-
-	public void setPedido(Pedido pedido) {
-		id.setPedido(pedido);
-	}
-
-	public Produto getProduto() {
-		return id.getProduto();
-	}
-
-	public void setProduto(Produto produto) {
-		id.setProduto(produto);
-	}
-
-	public Integer getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(Integer quantidade) {
-		this.quantidade = quantidade;
-	}
-
-	public Double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(Double preco) {
-		this.preco = preco;
 	}
 
 	public Double getSubTotal() {

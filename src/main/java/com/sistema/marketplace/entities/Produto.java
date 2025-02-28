@@ -1,5 +1,6 @@
 package com.sistema.marketplace.entities;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,10 +16,13 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "tb_produto")
 public class Produto implements Serializable {
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -48,58 +52,6 @@ public class Produto implements Serializable {
 		this.urlImagem = urlImagem;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public Double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(Double preco) {
-		this.preco = preco;
-	}
-
-	public String getUrlImagem() {
-		return urlImagem;
-	}
-
-	public void setUrlImagem(String urlImagem) {
-		this.urlImagem = urlImagem;
-	}
-
-	public Set<Categoria> getCategorias() {
-		return categorias;
-	}
-
-	@JsonIgnore
-	public Set<Pedido> getPedidos() {
-		Set<Pedido> set = new HashSet<>();
-		for (ItemPedido x : itens) {
-			set.add(x.getPedido());
-		}
-		return set;
-	}
 
 	@Override
 	public int hashCode() {

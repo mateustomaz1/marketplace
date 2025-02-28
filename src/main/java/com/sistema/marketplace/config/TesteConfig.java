@@ -19,7 +19,7 @@ import com.sistema.marketplace.entities.enums.StatusPedido;
 
 
 @Configuration
-@Profile("dev")
+@Profile("test")
 public class TesteConfig implements CommandLineRunner {
 
 	@Autowired
