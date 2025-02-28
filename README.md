@@ -94,10 +94,6 @@ Certifique-se de ter instalado:
    ```bash
    ./mvnw spring-boot:run
    ```
-4. Acesse a documentação da API no Swagger:
-   ```
-   http://localhost:8080/swagger-ui.html
-   ```
 ---
 ## Autores
 
