@@ -1,7 +1,12 @@
 # Marketplace Project
 
 ## Descrição do Projeto
-Este projeto consiste em um Marketplace de Serviços, onde prestadores de serviços podem se cadastrar e oferecer seus serviços para clientes interessados. O sistema permite a busca, avaliação e contratação de serviços, proporcionando uma interface intuitiva e segura para ambas as partes.
+Este projeto consiste em uma API de Marketplace, onde é possivel:
+
+- Adicionar produtos, clientes, categorias, pagamento
+- Remover produtos, clientes, categorias
+- Editar produtos, categorias, pagamento
+- Realizar pagamento
 
 ## Tecnologias Utilizadas
 - **Java 17**
@@ -10,37 +15,50 @@ Este projeto consiste em um Marketplace de Serviços, onde prestadores de servi�
   - Spring Data JPA
 - **PostgreSQL** (Banco de dados relacional)
 - **JPA/Hibernate** (Mapeamento objeto-relacional)
-- **Swagger/OpenAPI** (Documentação da API)
-- **H2** (Redução de boilerplate code)
+- **H2** 
 
 ## Funcionalidades
-- Cadastro e autenticação de usuários (cliente e prestador de serviço)
-- Publicação e gerenciamento de serviços
-- Pesquisa e filtro de serviços
-- Solicitação de serviço e pagamento
-- Sistema de avaliação e feedback
-- Painel administrativo para gerenciamento
+- Cadastro de usuários 
+- Gerenciamento de produtos
+- Pesquisa e filtro de produtos
+- Solicitação de pagamento
+
+---
+## UML do Projeto
+
+### Documento de visão: 
+
+<a href="docs/Documento de Visão - ecommerce.pdf">Clique aqui para acessar</a>
+
+
+### Consistência de diagramas
+ <a href="docs/consistencia-diagramas.pdf">Clique aqui para acessar</a>
+
+### Abaixo estão os diagramas UML do sistema:
+
+### Diagrama de Classes
+![Diagrama de Classes](imagens/diagrama-classes.png)
+
+### Diagrama de Caso de Uso
+![Diagrama de Caso de Uso](imagens/diagrama-caso.jpg)
+
+### Diagrama de Sequência
+![Diagrama de Sequência](imagens/diagrama-sequencia-1.png)
+![Diagrama de Sequência](imagens/diagrama-sequencia-2.png)
+![Diagrama de Sequência](imagens/diagrama-sequencia-3.png)
+
+### Diagrama de Atividades
+![Diagrama de Atividades](imagens/diagrama-atividade-1.png)
+![Diagrama de Atividades](imagens/diagrama-atividade-2.png)
+![Diagrama de Atividades](imagens/diagrama-atividade-3.png)
+![Diagrama de Atividades](imagens/diagrama-atividade-4.png)
 
 ---
 
+## Modelagem Banco de Dados
 
-## UML do Projeto
-Abaixo estão os diagramas UML do sistema:
+![Modelo conceitual](imagens/modelo-conceitual.png)
 
-### Diagrama de Classes
-![Diagrama de Classes]()
-
-### Diagrama de Caso de Uso
-![Diagrama de Caso de Uso]()
-
-### Diagrama de Sequência
-![Diagrama de Sequência]()
-
-### Diagrama de Estado
-![Diagrama de Estado]()
-
-### Diagrama de Atividades
-![Diagrama de Atividades]()
 
 ---
 ## Cronograma do Projeto
