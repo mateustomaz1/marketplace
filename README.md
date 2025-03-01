@@ -44,7 +44,6 @@ Este projeto consiste em uma API de Marketplace, onde é possivel:
 
 ### Diagrama de Sequência
 ![Diagrama de Sequência](imagens/diagrama-sequencia-1.png)
-![Diagrama de Sequência](imagens/diagrama-sequencia-2.png)
 ![Diagrama de Sequência](imagens/diagrama-sequencia-3.png)
 
 ### Diagrama de Atividades
