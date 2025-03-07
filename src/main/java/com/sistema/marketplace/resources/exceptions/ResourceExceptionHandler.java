@@ -2,13 +2,13 @@ package com.sistema.marketplace.resources.exceptions;
 
 import java.time.Instant;
 
+import com.sistema.marketplace.services.exceptions.DatabaseException;
+import com.sistema.marketplace.services.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.sistema.marketplace.services.exceptions.DatabaseException;
-import com.sistema.marketplace.services.exceptions.ResourceNotFoundException;
 
 import jakarta.servlet.http.HttpServletRequest;
 
