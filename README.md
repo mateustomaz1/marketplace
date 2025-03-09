@@ -24,6 +24,22 @@ Este projeto consiste em uma API de Marketplace, onde é possivel:
 - Solicitação de pagamento
 
 ---
+
+## Padrões de projetos
+
+
+| Padrão            | Tipo        | Onde aparece                                                                 |
+|-------------------|-------------|------------------------------------------------------------------------------|
+| Composite         | Estrutural  | Relação entre `Order` e `OrderItem`.                                         |
+| Adapter           | Estrutural  | Uso de `@JsonIgnore` para serialização JSON.                                 |
+| Facade            | Estrutural  | Classes de serviço (`UserService`, `OrderService`, etc.).                    |
+| Singleton         | Criacional  | Beans gerenciados pelo Spring (`@Service`, `@Repository`, etc.).             |
+| Factory Method    | Criacional  | Uso de `Optional` em métodos como `findById`.                                |
+| Builder           | Criacional  | Uso de `ServletUriComponentsBuilder` para construir URIs.                    |
+
+
+---
+
 ## UML do Projeto
 
 ### Documento de visão: 
