@@ -3,10 +3,10 @@
 ## Descrição do Projeto
 Este projeto consiste em uma API de Marketplace, onde é possivel:
 
-- Adicionar produtos, clientes, categorias, pagamento
-- Remover produtos, clientes, categorias
-- Editar produtos, categorias, pagamento
-- Realizar pagamento
+- Adicionar usuários
+- Remover usuários
+- Editar usuários
+- Listar usuários, produtos, pedidos
 
 ## Tecnologias Utilizadas
 - **Java 17**
@@ -21,7 +21,6 @@ Este projeto consiste em uma API de Marketplace, onde é possivel:
 - Cadastro de usuários 
 - Gerenciamento de produtos
 - Pesquisa e filtro de produtos
-- Solicitação de pagamento
 
 ---
 
