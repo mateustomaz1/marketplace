@@ -71,7 +71,7 @@ Este projeto consiste em uma API de Marketplace, onde é possivel:
 
 ## Modelagem Banco de Dados
 
-![Modelo conceitual](imagens/modelo-conceitual.png)
+![Modelo conceitual](imagens/modelo-conceitual.jpg)
 
 
 ---
